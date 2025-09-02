@@ -327,7 +327,7 @@ cat /etc/passwd
 sudo passwd root
 sudo passwd -l root
 sudo passwd -S root
-su -   # To switch to the root form non-root  , It will ask password
+su -   # To switch to the root from non-root  , It will ask password
 sudo passwd -u root
 sudo passwd -S root
 sudo passwd -d root  # delete password for the user
