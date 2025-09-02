@@ -37,3 +37,4 @@ tail -f /../.../collected_logs.txt
 head file.txt # display the first part of lines (bydefault last 10 lines)
 head -n 5 file.txt # display first 5 lines
 ```
+

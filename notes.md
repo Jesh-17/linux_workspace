@@ -142,4 +142,145 @@ done
 
 ```
 
+```bash
+# strings
+s="Hello"
+n="Ram"
+r="$s, $n!"
+echo "$r"
+
+
+# numbers
+n1=5
+n2=5
+add=$((n1+n2))
+sub=$((n1-n2))
+mul=$((n1*n2))
+quo=$((n1/n2))
+rem=$((n1%n2))
+echo "$n1, $n2, $add, $sub, $mul, $quo, $rem"
+
+# operators
+: '
+# comparison operators
+
+-eq  equals to
+-ne  not equal to
+-lt  less than
+-le  less than or equal to
+-gt  greater than
+-ge  greater than or equal to
+
+=  equal to
+!= not equal to
+<  less than
+>  greater than 
+
+
+# Arithmetic operators
++ addition
+- subtraction
+* multiplication
+/ division
+% modulus (remainder of division)
+
+
+# logical operators
+&& logical AND
+|| logical OR
+!  logical NOT
+
+
+# File operators
+-e checks if a file exists
+-d checks if a directory exists
+-f checks if a file is a regular file
+-s checks if a file is not empty
+
+'
+
+# conditional statements
+a=5
+if [ "$a" -lt 10 ]; then
+  echo "It is less"
+fi
+
+
+b=10
+if [ "$b" -le 9 ]; then
+  echo "It is less"
+else
+  echo "It is equal"
+fi
+
+c=10
+if [ "$c" -le 9 ]; then
+  echo "It is less"
+elif [ "$c" -ge 9 ]; then
+  echo "It is greater"
+else
+  echo "It is equal"
+fi
+
+if [ "$c" -ge 9 ]; then
+  if [ "$c" -lt 17 ]; then
+     echo "It is less"
+  fi
+fi
+
+# loops
+for i in {1..5}; do
+  echo -n "$i "
+done
+
+echo 
+
+c=1
+while [ $c -le 5 ]; do
+  echo "$c"
+  ((c++))
+done
+
+for i in {1..3}; do
+  for j in {1..2}; do
+    echo  "$i, $j"
+  done
+done
+
+for i in {1..5}; do
+  if [ $i -eq 3 ]; then
+    continue
+  fi
+  echo "$i"
+  if [ $i -eq 4 ]; then
+    break
+  fi
+done
+
+echo
+
+# until loops execute until a specified condition becomes true
+c=1
+until [ $c -ge 5 ]; do
+  echo "$c"
+  ((c++))
+done
+
+# functions
+wish(){
+    echo "wish"
+}
+wish
+echo
+greet(){
+    echo "The parameters are $1, $2"
+    local sum=$(($1 + $2))
+    echo "The sum is, $sum"
+}
+greet 5 12
+echo
+result=$(greet 5 12)
+echo "$result"
+
+```
 
