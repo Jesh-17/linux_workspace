@@ -333,3 +333,37 @@ sudo passwd -S root
 sudo passwd -d root  # delete password for the user
 ```
 
+```bash
+# To create a new group
+sudo groupadd group_name
+
+# To check the group added or not
+getent group   # getent group group_name
+
+# Add user to group
+sudo usermod -aG group_name user_name
+
+# To check memberships
+groups user_name
+
+# To remove user from group
+sudo gpasswd -d user_name group_name
+groups user_name
+
+# To delete a group
+getent group
+sudo groupdel group_name
+
+
+# example
+# Both user 'ubuntu, test' are under same group 'devops'. So if a file/folder is given group permission(chmod g+rwx), both can read/write inside it. So you can go and access any file or folder of these users.
+sudo groupadd devops
+getent group
+sudo usermod -aG devops ubuntu
+groups ubuntu
+sudo usermod -aG devops test
+groups test
+
+
+```
+
