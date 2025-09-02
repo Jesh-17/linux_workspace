@@ -284,3 +284,52 @@ echo "$result"
 
 ```
 
+### Users
+```bash
+# To check users
+cat /etc/passwd
+
+# Create a user
+sudo adduser user_name
+
+# To set password or change the password to user
+sudo passwd user_name
+
+# add user is in sudo group
+sudo usermod -aG sudo user_name
+groups user_name  # To check added or not 
+
+
+# To switch to the user
+su user_name  # switch to current directory
+su - user_name 
+
+# To lock the user account
+sudo passwd -l user_name
+sudo passwd -S user_name  # To check the password status of the user and L -> means account is locked
+
+# To unlock user account
+sudo passwd -u user_name
+sudo passwd -S user_name  # P -> password is set and account is unlocked
+
+# To delete a password for user
+sudo passwd -d user_name
+
+# To delete user account but keep the home directory and files are kept
+sudo deluser user_name
+# To delete user account and everything like home directory and mail spool
+sudo deluser --remove-home user_name 
+
+
+
+# for root path
+cat /etc/passwd
+sudo passwd root
+sudo passwd -l root
+sudo passwd -S root
+su -   # To switch to the root form non-root  , It will ask password
+sudo passwd -u root
+sudo passwd -S root
+sudo passwd -d root  # delete password for the user
+```
+
